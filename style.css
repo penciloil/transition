@@ -1,0 +1,22 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.container { 
+    background-color: antiquewhite;
+    width: 800px;
+    height: 500px;
+}
+
+.box {
+    background-color: azure;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    transition: transform 5s ease-out, background-color 3s;
+}
+
+.container:hover .box {
+    transform: translateX(calc(800px - 250px));
+    background-color: seagreen;
+}
