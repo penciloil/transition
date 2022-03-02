@@ -2,43 +2,58 @@
     box-sizing: border-box;
 }
 
+:root {
+    --width: 800px;
+    --height: 500px;
+    --box-width: 250px;
+    --box-height: 250px;
+    --border-style: 1px solid black;
+}
+
 .container { 
     background-color: antiquewhite;
-    width: 800px;
-    height: 500px;
+    width: var(--width);
+    height: var(--height);
+    border: var(--border-style);
 }
 
 .box {
     background-color: azure;
-    width: 250px;
-    height: 250px;
+    width: var(--box-width);
+    height: var(--box-height);
     border-radius: 50%;
-    animation: move 2s 3s forwards infinite alternate;
+    --border-style: 3px dashed rgb(219, 24, 24);
+    border: var(--border-style);
+    /* animation: move 0.5s forwards infinite alternate; */
     /* transition: transform 1s ease-out, background-color 1s; */
+}
+
+.box1 {
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: var(--border-style);
 }
 
 .container:hover .box {
     /* transform: translateX(calc(800px - 250px));
     background-color: seagreen; */
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 
 }
-
+/* 
 @keyframes move {
     25% {
-        transform: translateY(calc(500px - 250px));
+        transform: translateY(calc(var(--height) - var(--box-height)));
     }
 
     50% {
-        transform: translateY(calc(500px - 250px)) translateX(calc(800px - 250px));
+        transform: translateY(calc(var(--height) - var(--box-height))) translateX(calc(var(--width) - var(--box-width)));
     }   
-    
-    75% {
-
-    }
 
     100% {
-        transform: translateX(calc(800px - 250px));
+        transform: translateX(calc(var(--width) - var(--box-width)));
     }
-}
+} */
