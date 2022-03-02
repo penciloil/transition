@@ -13,10 +13,32 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    transition: transform 5s ease-out, background-color 3s;
+    animation: move 2s 3s forwards infinite alternate;
+    /* transition: transform 1s ease-out, background-color 1s; */
 }
 
 .container:hover .box {
-    transform: translateX(calc(800px - 250px));
-    background-color: seagreen;
+    /* transform: translateX(calc(800px - 250px));
+    background-color: seagreen; */
+    animation-play-state: paused;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+}
+
+@keyframes move {
+    25% {
+        transform: translateY(calc(500px - 250px));
+    }
+
+    50% {
+        transform: translateY(calc(500px - 250px)) translateX(calc(800px - 250px));
+    }   
+    
+    75% {
+
+    }
+
+    100% {
+        transform: translateX(calc(800px - 250px));
+    }
 }
